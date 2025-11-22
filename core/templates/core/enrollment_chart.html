@@ -1,0 +1,25 @@
+
+{% extends 'core/base.html' %}
+{% block content %}
+<h2>Enrollment per Course</h2>
+<canvas id="enrollChart" style="max-width:800px;"></canvas>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+async function drawChart(){
+  const resp = await fetch("{% url 'enrollment-chart-data' %}");
+  const json = await resp.json();
+  const ctx = document.getElementById('enrollChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: json.labels,
+      datasets: [{ label: 'Students', data: json.values }]
+    },
+    options: { responsive: true }
+  });
+}
+drawChart();
+</script>
+{% endblock %}

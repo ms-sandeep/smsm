@@ -1,0 +1,4 @@
+/* simple custom styles */
+body { padding-bottom: 40px; }
+.jumbotron { padding: 2rem; background: #f8f9fa; border-radius: 6px; }
+.table td, .table th { vertical-align: middle; }

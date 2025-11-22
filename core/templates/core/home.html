@@ -1,0 +1,13 @@
+
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-5">Student Management System</h1>
+  <p class="lead">Manage students, courses, instructors and view enrollment statistics.</p>
+  {% if user.is_authenticated %}
+    <a class="btn btn-primary" href="{% url 'student-list' %}">View Students</a>
+  {% else %}
+    <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+  {% endif %}
+</div>
+{% endblock %}
