@@ -1,162 +1,137 @@
-# smsm
-Step 5: Version Control Report (Git/GitHub)
-Student Management System Project
-________________________________________
-1. Introduction
-This report documents the version control process used in Step 5 of the Student Management System project. Git was used as the local version control system, and GitHub served as the cloud-based remote repository. The project includes more than ten meaningful commits, each contributing non-trivial development progress such as implementing CRUD operations, creating views and templates, integrating authentication, and adding data visualization.
-All commits follow descriptive and clear commit messages to ensure project traceability, maintainability, and transparency. The GitHub repository is publicly accessible and contains the full development history of the project.
-________________________________________
-2. GitHub Repository Link
-Public Repository:
-(Replace this with your actual link)
-https://github.com/your-username/sms-project
-________________________________________
-3. Full Commit List (10+ Non-Trivial Commits)
-Below is the list of all meaningful commits made during the development:
-1.	Initialize Django project structure and create core app
-2.	Add models: Student, Course, Instructor, Department, Enrollment
-3.	Generate initial migrations and apply SQLite database schema
-4.	Register all models in Django admin for database management
-5.	Implement CRUD views and templates for Student management
-6.	Add URL patterns for home page, authentication, and CRUD operations
-7.	Integrate Django authentication system with login/logout templates
-8.	Create database population script to insert sample records
-9.	Add enrollment data visualization using Chart.js
-10.	Add Bootstrap UI enhancements and CSS styling for dashboard
-(If you made extra commits, include them here.)
-________________________________________
-4. Screenshots of Commit List
-(Insert your screenshot here)
-Add a screenshot from your GitHub repository showing the entire list of commits.
-This verifies that your project contains at least 10 meaningful commits.
-________________________________________
-5. Screenshots of Three Major Commits
-You must include screenshots highlighting three key commits. A recommended selection:
-Commit 1: Add models and database schema
-•	Introduced all five tables (Student, Instructor, Department, Course, Enrollment)
-•	Created Django ORM structure
-•	Generated initial migrations
-(Insert screenshot here)
-________________________________________
-Commit 2: Implement Student CRUD operations
-•	Added ListView, CreateView, UpdateView, DeleteView
-•	Created corresponding templates
-•	Registered routes in URLs
-(Insert screenshot here)
-________________________________________
-Commit 3: Add Enrollment Chart Visualization
-•	Added JSON endpoint for chart data
-•	Integrated Chart.js on the frontend
-•	Displayed student count per course graphically
-(Insert screenshot here)
-________________________________________
-6. Summary
-This step demonstrates the use of Git and GitHub as essential tools for software development. Version control ensured clean documentation of changes, traceability, collaborative readiness, and proper project management. All required conditions for Step 5 were fully met:
-•	✔ Public GitHub repository
-•	✔ Minimum 10 meaningful commits
-•	✔ Screenshots of commit list
-•	✔ Screenshots of three major commits
-•	✔ Clear and structured commit messages
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-📘 Student Management System (SMS)
-A Django-based web application for managing student records, courses, instructors, departments, and enrollments with CRUD operations, authentication, data visualization, and SQLite integration.
+#Student Management System (CRUD Application)
+🎓 Student Management System
+A complete CRUD-based web application built using Django, SQLite, Bootstrap, and Chart.js.
+This project demonstrates database design, user authentication, CRUD operations, data visualization, and version control with Git/GitHub.
 ________________________________________
 🚀 Project Overview
-The Student Management System is a full-stack Django application designed to manage and organize academic data efficiently. It includes key functionalities such as:
-•	✔ User Authentication (Login/Logout)
-•	✔ CRUD Operations for Students
-•	✔ Relational Database with 5 Tables
-•	✔ Data Visualization using Chart.js
-•	✔ SQLite Database with Sample Data
-•	✔ Git/GitHub Version Control
-This project was completed as part of an academic assignment demonstrating relational databases, Django web development, and version control practices.
+The Student Management System (SMS) is a web-based application designed to manage student information for an educational institution.
+It enables administrators to:
+•	Create, Read, Update, and Delete student data
+•	Manage instructors, courses, and departments
+•	View enrollment statistics with charts
+•	Authenticate users through Django’s secure login system
+This application follows a modular structure and uses a relational database designed in 3rd Normal Form (3NF).
 ________________________________________
-🏗️ Tech Stack
-Frontend
-•	HTML5
-•	CSS3
-•	Bootstrap 5
-•	Chart.js
-Backend
-•	Python (Django Framework)
-•	SQLite Database
-•	Django ORM
-Tools & Deployment
-•	Git & GitHub
-•	DB Browser for SQLite
-•	Django Development Server
+🛠️ Tech Stack
+Component	Technology
+Backend	Django (Python)
+Database	SQLite
+Frontend	HTML, CSS, Bootstrap
+Charts	Chart.js
+Version Control	Git & GitHub
+Tools	DB Browser for SQLite
 ________________________________________
-🗂️ Database Design
-The system uses 5 relational tables:
-1.	Student
-2.	Course
-3.	Instructor
-4.	Department
-5.	Enrollment
-An ER diagram describes the relationships:
-•	Students enroll in multiple courses (M:N via Enrollment)
-•	Courses are taught by Instructors
-•	Instructors belong to Departments
+📂 Features
+✔ 1. User Authentication
+•	Secure login/logout using Django Auth
+•	Protected views for CRUD operations
+✔ 2. Full CRUD Operations
+Manage the following entities:
+•	Student
+•	Course
+•	Instructor
+•	Department
+•	Enrollment
+Includes:
+•	Add new record
+•	Edit existing record
+•	Delete record
+•	Display all records
+✔ 3. Data Visualization
+Interactive Bar Chart showing:
+•	Number of students enrolled in each course
+•	Generated dynamically using Chart.js
+•	Data served through Django JSON endpoints
+✔ 4. Database Integration
+•	SQLite relational DB
+•	5 tables, each with 10+ rows
+•	Data populated using custom script (populate_db.py)
 ________________________________________
-📊 Features
-🔐 User Authentication
-•	Secure login/logout system using Django's built-in authentication.
-🧑🎓 Student Management (CRUD)
-•	Create
-•	Read
-•	Update
-•	Delete
-📈 Data Visualization
-•	Enrollment per course displayed using Chart.js bar chart.
-🗃️ Sample Data
-Database is preloaded using populate_db.py with:
-•	10 Students
-•	10 Instructors
-•	10 Departments
-•	10 Courses
-•	20 Enrollment records
+📦 Project Structure
+sms_project/
+│
+├── core/
+│   ├── migrations/
+│   ├── templates/core/
+│   ├── static/core/css/
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   └── admin.py
+│
+├── sms_project/
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+│
+├── db.sqlite3
+├── populate_db.py
+├── manage.py
+└── README.md
 ________________________________________
-📦 Installation Guide
+🗄️ Database Models
+Student
+Field	Type
+name	CharField
+dob	DateField
+email	EmailField
+address	TextField
+Course
+•	course_name
+•	credits
+•	instructor (FK)
+Instructor
+•	name
+•	email
+•	department (FK)
+Department
+•	dept_name
+•	location
+Enrollment
+•	student (FK)
+•	course (FK)
+•	grade
+•	semester
+•	year
+________________________________________
+🔧 How to Run the Project
 1. Clone the Repository
-git clone https://github.com/your-username/sms-project.git
+git clone https://github.com/Swetha-kasturi1919/sms-project.git
 cd sms-project
 2. Create Virtual Environment
 python -m venv venv
-Activate it:
-Windows PowerShell:
-venv\Scripts\Activate.ps1
-Mac/Linux:
-source venv/bin/activate
+venv\Scripts\activate   # On Windows
+# OR
+source venv/bin/activate   # On Mac/Linux
 3. Install Dependencies
 pip install -r requirements.txt
-4. Apply Migrations
+4. Run Migrations
 python manage.py migrate
-5. Populate Database (Optional)
+5. Populate Sample Data (Optional)
 python populate_db.py
-6. Create Superuser
-python manage.py createsuperuser
-7. Run Server
+6. Run Development Server
 python manage.py runserver
-
+Open in browser:
+👉 http://127.0.0.1:8000/
+________________________________________
+📈 Data Visualization Overview
+The dashboard includes:
+•	Enrollment count per course
+•	Dynamic chart created using Chart.js
+•	Data retrieved through a Django JSON API endpoint
+________________________________________
+🧪 Sample Admin User
+Username: admin
+Password: admin
+________________________________________
+💾 GitHub Version Control
+This project contains:
+•	10+ meaningful commits
+•	Clear and descriptive commit messages
+•	Major commits include:
+o	Model creation
+o	CRUD operations
+o	Authentication system
+o	Chart visualization
+o	Database population script
 
